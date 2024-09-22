@@ -1,4 +1,4 @@
-pipeline{
+dentialspipeline{
     
     agent any
     tools{
@@ -20,7 +20,7 @@ pipeline{
             }
             post{
                 success{
-                    deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://localhost:9090/')], contextPath: null, war: '**/*.war'
+                    deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://localhost:9090/')], contextPath: null, war: '**/*.war'
                 }
             }
         }   
